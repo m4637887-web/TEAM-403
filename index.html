@@ -4,86 +4,613 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>TEAM 403</title>
+
 <style>
-*{box-sizing:border-box} body{margin:0;font-family:Arial,Tahoma,sans-serif;color:#fff;min-height:100vh;background:#111 url('TEAM403_BG_NEW.jpg') center/cover fixed no-repeat;position:relative}body:before{content:"";position:fixed;inset:0;background:rgba(0,0,0,.68);z-index:-1}.wrap{width:min(920px,92%);margin:auto;padding:28px 0 45px}.logo{display:block;width:145px;height:145px;object-fit:cover;border-radius:50%;margin:5px auto 14px;border:3px solid #fff;box-shadow:0 0 25px rgba(255,255,255,.2)}h1{text-align:center;margin:0;font-size:42px;letter-spacing:3px}.moving{margin:14px auto 25px;width:max-content;max-width:100%;overflow:hidden;white-space:nowrap;font-size:21px;font-weight:bold;animation:move 5s linear infinite}@keyframes move{0%{transform:translateX(80px);opacity:.2}50%{opacity:1}100%{transform:translateX(-80px);opacity:.2}}.nav,.grid{display:grid;gap:12px}.nav{grid-template-columns:repeat(3,1fr);margin-bottom:18px}.grid{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}.card{background:rgba(20,20,20,.78);border:1px solid rgba(255,255,255,.18);border-radius:18px;padding:18px;backdrop-filter:blur(5px);box-shadow:0 10px 30px rgba(0,0,0,.25)}h2{margin:4px 0 15px;font-size:24px}.btn{display:block;width:100%;padding:13px 14px;margin:9px 0;border:0;border-radius:12px;background:#fff;color:#111;text-decoration:none;font-weight:bold;text-align:center;cursor:pointer;font-size:15px}.btn:hover{transform:scale(1.02)}.sub{color:#ddd;text-align:center;line-height:1.7}.music{display:flex;gap:10px;align-items:center;justify-content:center;flex-wrap:wrap;margin:15px 0}.music button{background:#fff;color:#111;border:0;border-radius:12px;padding:12px 20px;font-weight:bold;cursor:pointer}.hidden{display:none}.contact{text-align:center;font-size:17px;line-height:1.8}.contact strong{font-size:20px}.form input,.form textarea{width:100%;margin:7px 0;padding:12px;border-radius:10px;border:1px solid #555;background:#111;color:#fff}.form textarea{min-height:110px;resize:vertical}.note{font-size:12px;color:#bbb;margin-top:8px}.footer{text-align:center;margin-top:30px;color:#ddd}
+*{box-sizing:border-box}
+
+body{
+margin:0;
+font-family:Tahoma,Arial,sans-serif;
+color:#fff;
+min-height:100vh;
+background:#111 url('TEAM403_BG_NEW.jpg') center/cover fixed no-repeat;
+position:relative;
+}
+
+body:before{
+content:"";
+position:fixed;
+inset:0;
+background:rgba(0,0,0,.72);
+z-index:-1;
+}
+
+.wrap{
+width:min(920px,92%);
+margin:auto;
+padding:28px 0 45px;
+}
+
+.logo{
+display:block;
+width:145px;
+height:145px;
+object-fit:cover;
+border-radius:50%;
+margin:5px auto 14px;
+border:3px solid #fff;
+box-shadow:0 0 25px rgba(255,255,255,.2);
+}
+
+h1{
+text-align:center;
+margin:0;
+font-size:42px;
+letter-spacing:3px;
+}
+
+.moving{
+margin:14px auto 25px;
+width:max-content;
+max-width:100%;
+overflow:hidden;
+white-space:nowrap;
+font-size:21px;
+font-weight:bold;
+animation:move 5s linear infinite;
+}
+
+@keyframes move{
+0%{transform:translateX(80px);opacity:.2}
+50%{opacity:1}
+100%{transform:translateX(-80px);opacity:.2}
+}
+
+.nav,.grid{
+display:grid;
+gap:12px;
+}
+
+.nav{
+grid-template-columns:repeat(3,1fr);
+margin-bottom:18px;
+}
+
+.grid{
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+}
+
+.card{
+background:rgba(20,20,20,.82);
+border:1px solid rgba(255,255,255,.18);
+border-radius:18px;
+padding:18px;
+backdrop-filter:blur(6px);
+box-shadow:0 10px 30px rgba(0,0,0,.3);
+}
+
+h2{
+margin:4px 0 15px;
+font-size:24px;
+}
+
+.btn{
+display:block;
+width:100%;
+padding:13px 14px;
+margin:9px 0;
+border:0;
+border-radius:12px;
+background:#fff;
+color:#111;
+text-decoration:none;
+font-weight:bold;
+text-align:center;
+cursor:pointer;
+font-size:15px;
+transition:.2s;
+}
+
+.btn:hover{
+transform:scale(1.02);
+}
+
+.sub{
+color:#ddd;
+text-align:center;
+line-height:1.7;
+}
+
+.hidden{
+display:none!important;
+}
+
+.contact{
+text-align:center;
+font-size:17px;
+line-height:1.8;
+}
+
+.contact strong{
+font-size:20px;
+}
+
+.footer{
+text-align:center;
+margin-top:30px;
+color:#ddd;
+}
+
+.panel{
+margin-top:15px;
+}
+
+.panel-box{
+background:rgba(0,0,0,.3);
+border:1px solid rgba(255,255,255,.12);
+padding:15px;
+border-radius:14px;
+margin-top:12px;
+}
+
+.form input,
+.form textarea{
+width:100%;
+margin:7px 0;
+padding:12px;
+border-radius:10px;
+border:1px solid #555;
+background:#111;
+color:#fff;
+font-family:inherit;
+}
+
+.form textarea{
+min-height:110px;
+resize:vertical;
+}
+
+.badge{
+display:inline-block;
+padding:6px 10px;
+border-radius:8px;
+background:#fff;
+color:#111;
+font-size:12px;
+font-weight:bold;
+margin-bottom:10px;
+}
+
+@media(max-width:600px){
+h1{font-size:32px}
+.logo{width:125px;height:125px}
+.nav{grid-template-columns:1fr}
+.card{padding:15px}
+}
 </style>
 </head>
+
 <body>
+
 <div class="wrap">
+
 <img class="logo" src="TEAM403_LOGO_NEW.jpg" alt="TEAM 403">
+
 <h1>TEAM 403</h1>
+
 <div class="moving">اليكسير الأجنبي</div>
 
-<div class="music">
-<button onclick="toggleMusic()" id="musicBtn">🎵 تشغيل كوكب النسيان</button>
-<audio id="song" preload="metadata" src="TEAM403_MUSIC_NEW.mp3"></audio>
+<!-- الأقسام -->
+<div class="nav">
+
+<button class="btn" onclick="showSection('general')">
+العام
+</button>
+
+<button class="btn" onclick="adminLogin()">
+الأدمن
+</button>
+
+<button class="btn" onclick="devLogin()">
+المطور
+</button>
+
 </div>
 
-<div class="nav">
-<button class="btn" onclick="show('general')">العام</button>
-<button class="btn" onclick="adminLogin()">الأدمن</button>
-<button class="btn" onclick="devLogin()">المطور</button>
-</div>
+
+<!-- ================= العام ================= -->
 
 <section id="general" class="card">
+
 <h2>العام</h2>
+
 <div class="grid">
+
+<!-- التواصل -->
+
 <div class="card">
+
 <h2>التواصل مع اليكسير الأجنبي</h2>
-<div class="contact"><strong>واتساب</strong><br>01559227221<br><a class="btn" href="https://wa.me/201559227221" target="_blank">فتح واتساب</a><strong>تليجرام</strong><br>@EXR_AGY_403<a class="btn" href="https://t.me/EXR_AGY_403" target="_blank">فتح شات تليجرام</a></div>
+
+<div class="contact">
+
+<strong>واتساب</strong>
+<br>
+01559227221
+
+<a class="btn"
+href="https://wa.me/201559227221"
+target="_blank">
+فتح واتساب
+</a>
+
+<strong>تليجرام</strong>
+<br>
+@EXR_AGY_403
+
+<a class="btn"
+href="https://t.me/EXR_AGY_403"
+target="_blank">
+فتح شات تليجرام
+</a>
+
 </div>
+
+</div>
+
+
+<!-- المجموعات -->
+
 <div class="card">
+
 <h2>بارات سحب برعاية TEAM 403</h2>
-<a class="btn" href="https://chat.whatsapp.com/FhP1ONJx8Bu5spsV2xotOq" target="_blank">بار مسحوب 1</a>
-<a class="btn" href="https://chat.whatsapp.com/JPPvgax19Mn0D0n4qrHrxt" target="_blank">بار مسحوب 2</a>
-<a class="btn" href="https://chat.whatsapp.com/EDC2KpVRa4oHTcCwFDLOEX" target="_blank">بار مسحوب 3</a>
-<a class="btn" href="https://chat.whatsapp.com/HHhFqQimJwA5XSMg7A9l14" target="_blank">بار مسحوب 4</a>
-<a class="btn" href="https://chat.whatsapp.com/GTOqQw8WEjbG8W6uV89k4x" target="_blank">بار مسحوب 5</a>
-<a class="btn" href="https://chat.whatsapp.com/LxDs1Qe66gk8OKgk2iQI58" target="_blank">بار مسحوب 6</a>
-<a class="btn" href="https://chat.whatsapp.com/EMFWTeghLCy7rnzxxnCyph" target="_blank">بار مسحوب 7</a>
-<a class="btn" href="https://chat.whatsapp.com/LIQRaxKEs7p1mjbr7kREEw" target="_blank">بار مسحوب 8</a>
+
+<a class="btn" href="https://chat.whatsapp.com/FhP1ONJx8Bu5spsV2xotOq" target="_blank">
+بار مسحوب 1
+</a>
+
+<a class="btn" href="https://chat.whatsapp.com/JPPvgax19Mn0D0n4qrHrxt" target="_blank">
+بار مسحوب 2
+</a>
+
+<a class="btn" href="https://chat.whatsapp.com/EDC2KpVRa4oHTcCwFDLOEX" target="_blank">
+بار مسحوب 3
+</a>
+
+<a class="btn" href="https://chat.whatsapp.com/HHhFqQimJwA5XSMg7A9l14" target="_blank">
+بار مسحوب 4
+</a>
+
+<a class="btn" href="https://chat.whatsapp.com/GTOqQw8WEjbG8W6uV89k4x" target="_blank">
+بار مسحوب 5
+</a>
+
+<a class="btn" href="https://chat.whatsapp.com/LxDs1Qe66gk8OKgk2iQI58" target="_blank">
+بار مسحوب 6
+</a>
+
+<a class="btn" href="https://chat.whatsapp.com/EMFWTeghLCy7rnzxxnCyph" target="_blank">
+بار مسحوب 7
+</a>
+
+<a class="btn" href="https://chat.whatsapp.com/LIQRaxKEs7p1mjbr7kREEw" target="_blank">
+بار مسحوب 8
+</a>
+
 </div>
+
+
+<!-- الروابط -->
+
 <div class="card">
+
 <h2>روابط TEAM 403</h2>
-<a class="btn" href="https://m4637887-web.github.io/TEAM-403/" target="_blank">موقع TEAM 403</a>
-<a class="btn" href="https://whatsapp.com/channel/0029Vb7xmlQBVJkzQoTKnt2v" target="_blank">قناة تشريد برعاية 403</a>
-<a class="btn" href="https://chat.whatsapp.com/HyC38KSiUAyFZJD4k7zzPa" target="_blank">جروب التعليم والبرمجة</a>
-<a class="btn" href="https://chat.whatsapp.com/LMo3qv7v1qpCjgs8TTo5iV" target="_blank">رغي TEAM 403</a>
+
+<a class="btn"
+href="https://m4637887-web.github.io/TEAM-403/"
+target="_blank">
+موقع TEAM 403
+</a>
+
+<a class="btn"
+href="https://whatsapp.com/channel/0029Vb7xmlQBVJkzQoTKnt2v"
+target="_blank">
+قناة تشريد برعاية 403
+</a>
+
+<a class="btn"
+href="https://chat.whatsapp.com/HyC38KSiUAyFZJD4k7zzPa"
+target="_blank">
+جروب التعليم والبرمجة
+</a>
+
+<a class="btn"
+href="https://chat.whatsapp.com/LMo3qv7v1qpCjgs8TTo5iV"
+target="_blank">
+رغي TEAM 403
+</a>
+
 </div>
+
+
+<!-- الشكاوى -->
+
 <div class="card form">
+
 <h2>الشكاوي والاقتراحات</h2>
-<input id="name" placeholder="اسمك">
-<textarea id="message" placeholder="اكتب الشكوى أو الاقتراح أو المشكلة"></textarea>
-<button class="btn" onclick="sendComplaint()">إرسال</button>
-<p class="note">ملاحظة: النموذج حاليًا يفتح رسالة جاهزة في واتساب؛ التخزين والرد من داخل الموقع يحتاج خدمة خلفية.</p>
+
+<input
+id="name"
+placeholder="اسمك">
+
+<textarea
+id="message"
+placeholder="اكتب الشكوى أو الاقتراح أو المشكلة">
+</textarea>
+
+<button class="btn" onclick="sendComplaint()">
+إرسال
+</button>
+
 </div>
+
 </div>
-<div class="footer">المطور: by boykaaa</div>
+
+<div class="footer">
+المطور: by boykaaa
+</div>
+
 </section>
+
+
+<!-- ================= الأدمن ================= -->
 
 <section id="admin" class="card hidden">
-<h2>الشكاوي والاقتراحات</h2>
-<p class="sub">قسم الأدمن لإدارة الشكاوي والاقتراحات.</p>
-<div id="adminList"></div>
-<button class="btn" onclick="show('general')">رجوع</button>
-</section>
 
-<section id="developer" class="card hidden">
-<h2>قسم المطور</h2>
-<p class="sub">المطور: by boykaaa</p>
-<a class="btn" href="https://m4637887-web.github.io/TEAM-403/" target="_blank">موقع TEAM 403</a>
-<button class="btn" onclick="show('general')">رجوع</button>
-</section>
+<h2>لوحة الأدمن</h2>
+
+<p class="sub">
+مرحبًا بك في لوحة تحكم TEAM 403
+</p>
+
+<div class="panel">
+
+<div class="panel-box">
+
+<span class="badge">ADMIN</span>
+
+<h3>الشكاوي والاقتراحات</h3>
+
+<p>
+من هنا يمكن إدارة الشكاوي والاقتراحات مستقبلًا.
+</p>
+
 </div>
 
+
+<div class="panel-box">
+
+<h3>إدارة الروابط</h3>
+
+<button class="btn" onclick="alert('إضافة رابط - سيتم تفعيلها في النسخة القادمة')">
+إضافة رابط
+</button>
+
+<button class="btn" onclick="alert('تعديل الروابط - سيتم تفعيلها في النسخة القادمة')">
+تعديل الروابط
+</button>
+
+<button class="btn" onclick="alert('حذف رابط - سيتم تفعيلها في النسخة القادمة')">
+حذف رابط
+</button>
+
+</div>
+
+
+<div class="panel-box">
+
+<h3>إعلانات الموقع</h3>
+
+<button class="btn" onclick="alert('إضافة إعلان - سيتم تفعيلها في النسخة القادمة')">
+إضافة إعلان
+</button>
+
+</div>
+
+</div>
+
+<button class="btn" onclick="showSection('general')">
+رجوع للموقع
+</button>
+
+</section>
+
+
+<!-- ================= المطور ================= -->
+
+<section id="developer" class="card hidden">
+
+<h2>لوحة المطور</h2>
+
+<p class="sub">
+المطور: by boykaaa
+</p>
+
+<div class="panel">
+
+<div class="panel-box">
+
+<span class="badge">DEVELOPER</span>
+
+<h3>مرحبًا بالمطور</h3>
+
+<p>
+أنت الآن داخل لوحة المطور الخاصة بموقع TEAM 403.
+</p>
+
+</div>
+
+
+<div class="panel-box">
+
+<h3>موقع TEAM 403</h3>
+
+<a
+class="btn"
+href="https://m4637887-web.github.io/TEAM-403/"
+target="_blank">
+دخول إلى الموقع
+</a>
+
+</div>
+
+
+<div class="panel-box">
+
+<h3>إدارة الموقع</h3>
+
+<button class="btn"
+onclick="alert('إدارة المحتوى - سيتم تفعيلها في النسخة القادمة')">
+إدارة المحتوى
+</button>
+
+<button class="btn"
+onclick="alert('إدارة الأقسام - سيتم تفعيلها في النسخة القادمة')">
+إدارة الأقسام
+</button>
+
+<button class="btn"
+onclick="alert('إدارة الروابط - سيتم تفعيلها في النسخة القادمة')">
+إدارة الروابط
+</button>
+
+</div>
+
+
+<div class="panel-box">
+
+<h3>معلومات الموقع</h3>
+
+<p>
+TEAM 403
+</p>
+
+<p>
+المطور: by boykaaa
+</p>
+
+</div>
+
+</div>
+
+<button class="btn" onclick="showSection('general')">
+رجوع للموقع
+</button>
+
+</section>
+
+</div>
+
+
 <script>
-function show(id){['general','admin','developer'].forEach(x=>document.getElementById(x).classList.add('hidden'));document.getElementById(id).classList.remove('hidden');window.scrollTo({top:0,behavior:'smooth'})}
-function adminLogin(){if(prompt('اكتب كلمة مرور الأدمن')==='403403')show('admin');else alert('كلمة المرور غير صحيحة')}
-function devLogin(){if(prompt('اكتب كلمة مرور المطور')==='0112233')show('developer');else alert('كلمة المرور غير صحيحة')}
-const song=document.getElementById('song'),btn=document.getElementById('musicBtn');
-function toggleMusic(){if(song.paused){song.play().then(()=>btn.textContent='⏸️ إيقاف كوكب النسيان').catch(()=>alert('اضغط مرة تانية لتشغيل الأغنية'))}else{song.pause();btn.textContent='🎵 تشغيل كوكب النسيان'}}
-song.addEventListener('ended',()=>btn.textContent='🎵 تشغيل كوكب النسيان');
-function sendComplaint(){const name=document.getElementById('name').value.trim()||'بدون اسم',msg=document.getElementById('message').value.trim();if(!msg)return alert('اكتب الشكوى أو الاقتراح الأول');const text=encodeURIComponent('TEAM 403 - شكوى/اقتراح\nالاسم: '+name+'\n\n'+msg);window.open('https://wa.me/201559227221?text='+text,'_blank')}
+
+/* التنقل بين الأقسام */
+
+function showSection(id){
+
+document
+.querySelectorAll('section')
+.forEach(section=>{
+section.classList.add('hidden');
+});
+
+document
+.getElementById(id)
+.classList.remove('hidden');
+
+window.scrollTo({
+top:0,
+behavior:'smooth'
+});
+
+}
+
+
+/* دخول الأدمن */
+
+function adminLogin(){
+
+const password =
+prompt('اكتب كلمة مرور الأدمن');
+
+if(password === '403403'){
+
+showSection('admin');
+
+}else{
+
+alert('كلمة المرور غير صحيحة');
+
+}
+
+}
+
+
+/* دخول المطور */
+
+function devLogin(){
+
+const password =
+prompt('اكتب كلمة مرور المطور');
+
+if(password === '0112233'){
+
+showSection('developer');
+
+}else{
+
+alert('كلمة المرور غير صحيحة');
+
+}
+
+}
+
+
+/* الشكاوى */
+
+function sendComplaint(){
+
+const name =
+document.getElementById('name').value.trim();
+
+const message =
+document.getElementById('message').value.trim();
+
+if(!message){
+
+alert('اكتب الشكوى أو الاقتراح الأول');
+
+return;
+
+}
+
+/*
+حالياً لا يتم فتح واتساب.
+النظام يحتاج Backend/Database
+حتى تصل الشكوى للأدمن من أجهزة الزوار.
+*/
+
+alert(
+'تم استلام الشكوى داخل النموذج.\\n' +
+'سيتم ربطها بنظام الشكاوى لاحقًا.'
+);
+
+document.getElementById('name').value='';
+document.getElementById('message').value='';
+
+}
+
 </script>
+
 </body>
-</html>
+  </html>
