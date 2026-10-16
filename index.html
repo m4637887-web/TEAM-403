@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>TEAM 403 - العام</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#09090d url('bg.jpg') center/cover fixed;color:white;font-family:Tahoma,Arial,sans-serif}body:before{content:'';position:fixed;inset:0;background:#05050bd9;z-index:-1}.wrap{max-width:850px;width:92%;margin:auto;padding:25px 0}header{text-align:center;padding:20px}h1,h2{color:#e6bd63}h1{font-size:42px;margin:0}section{background:#101018e8;border:1px solid #e6bd6355;border-radius:15px;padding:18px;margin:15px 0}h2{margin:0 0 14px}.btn{display:block;width:100%;padding:13px;margin:9px 0;border:1px solid #e6bd6366;border-radius:10px;background:linear-gradient(135deg,#382a16,#17171e);color:white;text-align:center;text-decoration:none;font-weight:bold;font-size:16px;cursor:pointer}.grid{display:grid;grid-template-columns:1fr}@media(min-width:620px){.grid{grid-template-columns:1fr 1fr;gap:0 12px}}.small{text-align:center;color:#ccc;font-size:13px;line-height:1.7}footer{text-align:center;color:#ccc;font-size:13px;padding:18px}
+</style></head><body><main class="wrap">
+<header><h1>TEAM 403</h1><p>قسم العام • اليكسير الأجنبي</p></header>
+<section><h2>🎵 الأغنية</h2><button class="btn" id="play">دوس هنا🫦</button><audio id="song" src="song.mp3" preload="none"></audio><p id="status" class="small">اضغط لتشغيل الأغنية أو إيقافها.</p></section>
+<section><h2>📣 التواصل مع اليكسير الأجنبي</h2><a class="btn" href="https://t.me/EXR_AGY_403" target="_blank" rel="noopener">تواصل على Telegram</a><a class="btn" href="https://wa.me/201559272221" target="_blank" rel="noopener">تواصل على WhatsApp</a></section>
+<section><h2>📢 القنوات</h2><a class="btn" href="https://whatsapp.com/channel/0029Vb7xmlQBVJkzQoTKnt2v" target="_blank" rel="noopener">قناة تشريد برعاية TEAM 403</a></section>
+<section><h2>🔥 الجروبات</h2><div class="grid">
+<a class="btn" href="https://chat.whatsapp.com/LSiTHrM3HoJBvtF1F3db1I?s=cl&amp;p=a&amp;mlu=4&amp;ilr=4&amp;iam=0" target="_blank" rel="noopener">بار مسحوب 1</a>
+<a class="btn" href="https://chat.whatsapp.com/FhP1ONJx8Bu5spsV2xotOq" target="_blank" rel="noopener">بار مسحوب 2</a>
+<a class="btn" href="https://chat.whatsapp.com/JPPvgax19Mn0D0n4qrHrxt" target="_blank" rel="noopener">بار مسحوب 3</a>
+<a class="btn" href="https://chat.whatsapp.com/EDC2KpVRa4oHTcCwFDLOEX" target="_blank" rel="noopener">بار مسحوب 4</a>
+<a class="btn" href="https://chat.whatsapp.com/HHhFqQimJwA5XSMg7A9l14" target="_blank" rel="noopener">بار مسحوب 5</a>
+<a class="btn" href="https://chat.whatsapp.com/GTOqQw8WEjbG8W6uV89k4x" target="_blank" rel="noopener">بار مسحوب 6</a>
+<a class="btn" href="https://chat.whatsapp.com/LxDs1Qe66gk8OKgk2iQI58" target="_blank" rel="noopener">بار مسحوب 7</a>
+<a class="btn" href="https://chat.whatsapp.com/EMFWTeghLCy7rnzxxnCyph" target="_blank" rel="noopener">بار مسحوب 8</a>
+<a class="btn" href="https://chat.whatsapp.com/LIQRaxKEs7p1mjbr7kREEw" target="_blank" rel="noopener">بار مسحوب 9</a>
+<a class="btn" href="https://chat.whatsapp.com/HyC38KSiUAyFZJD4k7zzPa" target="_blank" rel="noopener">جروب التعليم والبرمجة</a>
+<a class="btn" href="https://chat.whatsapp.com/LMo3qv7v1qpCjgs8TTo5iV" target="_blank" rel="noopener">رغي TEAM 403</a>
+</div></section><footer>المطور: by boykaaa • TEAM 403</footer></main>
+<script>
+const s=document.getElementById('song'),b=document.getElementById('play'),t=document.getElementById('status');
+b.onclick=async()=>{if(s.paused){try{await s.play();b.textContent='إيقاف الأغنية ⏸️';t.textContent='الأغنية شغالة 🎶'}catch(e){t.textContent='تأكد إن song.mp3 مرفوع في نفس مجلد ملف الموقع.'}}else{s.pause();b.textContent='دوس هنا🫦';t.textContent='الأغنية اتوقفت.'}};
+s.onended=()=>{b.textContent='دوس هنا🫦';t.textContent='الأغنية خلصت.'};
+</script></body></html>
